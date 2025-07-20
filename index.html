@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Converter App</title>
+    <meta name="description" content="Price Converter е лесно за използване Android приложение за бързо и точно преобразуване на цени между различни валути.">
+    
+    <!-- Можете да използвате иконата на приложението си като favicon -->
+    <link rel="icon" href="icon.png" type="image/png">
+
+    <style>
+        /* --- Общи стилове --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Хедър/Банер --- */
+        .header {
+            background-image: linear-gradient(to right, #005c97, #363795);
+            /* Можете да използвате и банера си като фон:
+               background-image: url('banner.jpg');
+               background-size: cover;
+               background-position: center;
+            */
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 25%;
+            border: 4px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        /* --- Бутон за сваляне --- */
+        .download-button {
+            display: inline-block;
+            margin-top: 30px;
+            transition: transform 0.2s ease;
+        }
+
+        .download-button img {
+            height: 60px; /* Можете да промените размера */
+        }
+
+        .download-button:hover {
+            transform: scale(1.05);
+        }
+        
+        /* --- Секции --- */
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #005c97;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .features-list li {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        /* --- Футър --- */
+        .footer {
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Хедър с името и иконата на приложението -->
+    <header class="header">
+        <!-- ВАЖНО: Уверете се, че файлът 'icon.png' е в същата папка -->
+        <img src="icon.png" alt="Price Converter App Icon" class="app-icon">
+        <h1>Price Converter</h1>
+        <p>Вашият незаменим помощник за преобразуване на валути</p>
+        
+        <!-- ВАЖНО: ЛИНКЪТ КЪМ ВАШЕТО ПРИЛОЖЕНИЕ Е ВЕЧЕ ДОБАВЕН -->
+        <a href="https://play.google.com/store/apps/details?id=com.paf.priceconverter" target="_blank" class="download-button">
+            <!-- Стандартен Google Play бутон -->
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/bg_badge_web_generic.png" alt="Get it on Google Play">
+        </a>
+    </header>
+
+    <div class="container">
+        <!-- Секция "Характеристики" -->
+        <section class="section">
+            <h2>Характеристики</h2>
+            <ul class="features-list">
+                <li>Интуитивен и лесен за използване интерфейс</li>
+                <li>Бързо и точно преобразуване на цени</li>
+                <li>Поддръжка на голям брой световни валути</li>
+                <li>Изчистен дизайн без излишни елементи</li>
+            </ul>
+        </section>
+
+        <!-- Секция "Политика за поверителност" -->
+        <section id="privacy" class="section">
+            <h2>Политика за поверителност</h2>
+            <p>
+                Вашата поверителност е важна за нас. Приложението Price Converter е създадено, за да бъде напълно функционално, без да събира, съхранява или споделя каквато и да е лична информация от своите потребители.
+            </p>
+            <ul>
+                <li><strong>Без събиране на данни:</strong> Приложението не изисква и не събира никакви лични данни като имена, имейли или информация за местоположение.</li>
+                <li><strong>Използване на интернет:</strong> Приложението може да изисква достъп до интернет единствено за актуализиране на валутните курсове.</li>
+                <li><strong>Без реклами на трети страни:</strong> Приложението не съдържа реклами, които биха могли да събират информация за вас.</li>
+            </ul>
+            <p>
+                Последна актуализация: 20 юли 2025 г.
+            </p>
+        </section>
+    </div>
+
+    <!-- Футър -->
+    <footer class="footer">
+        <p>
+            © 2025 Pablito86. Всички права запазени. | 
+            <a href="#privacy">Политика за поверителност</a>
+        </p>
+    </footer>
+
+</body>
+</html>
