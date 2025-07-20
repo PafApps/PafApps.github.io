@@ -7,8 +7,8 @@
     
     <title>Price Converter App</title>
     
-    <!-- Уверете се, че файлът 'icon.png' е в същата папка -->
-    <link rel="icon" href="icon.png" type="image/png">
+    <!-- Иконата вече се зарежда от интернет -->
+    <link rel="icon" href="https://i.ibb.co/6wmzC5v/price-converter-icon.png" type="image/png">
 
     <style>
         /* --- General Styles --- */
@@ -29,7 +29,10 @@
 
         /* --- Header/Banner --- */
         .header {
-            background-image: linear-gradient(to right, #005c97, #363795);
+            /* КОРЕКЦИЯ: Банерът вече е фон на хедъра */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.ibb.co/3mSgV8V/price-converter-banner.png');
+            background-size: cover;
+            background-position: center;
             color: white;
             padding: 40px 20px 60px 20px;
             text-align: center;
@@ -41,7 +44,7 @@
         .app-icon {
             width: 120px;
             height: 120px;
-            border-radius: 50%; /* КОРЕКЦИЯ: Променено на 50% за перфектен кръг */
+            border-radius: 50%;
             border: 4px solid white;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             margin-bottom: 20px;
@@ -51,12 +54,14 @@
             margin: 0;
             font-size: 2.8em;
             font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Добавена сянка за по-добра четимост */
         }
 
         .header p {
             font-size: 1.2em;
             opacity: 0.9;
             margin-top: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Добавена сянка за по-добра четимост */
         }
 
         /* --- Language Switcher --- */
@@ -87,7 +92,6 @@
             color: #005c97;
         }
         
-        /* КОРЕКЦИЯ: Нов, по-добър CSS за смяна на езика */
         body.lang-en [lang="bg"] { display: none; }
         body.lang-bg [lang="en"] { display: none; }
 
@@ -158,7 +162,6 @@
         }
     </style>
 </head>
-<!-- КОРЕКЦИЯ: Добавен е клас, за да знае страницата кой език е активен -->
 <body class="lang-en">
 
     <!-- Header Section -->
@@ -168,7 +171,8 @@
             <button id="lang-bg">BG</button>
         </div>
         
-        <img src="icon.png" alt="Price Converter App Icon" class="app-icon">
+        <!-- КОРЕКЦИЯ: Иконата вече се зарежда от интернет -->
+        <img src="https://i.ibb.co/6wmzC5v/price-converter-icon.png" alt="Price Converter App Icon" class="app-icon">
         
         <h1 lang="en">Price Converter</h1>
         <p lang="en">Your essential tool for currency conversions</p>
@@ -239,7 +243,6 @@
         </p>
     </footer>
 
-    <!-- КОРЕКЦИЯ: Напълно нов, по-надежден JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const enButton = document.getElementById('lang-en');
@@ -247,20 +250,16 @@
             const body = document.body;
 
             function setLanguage(lang) {
-                // Просто сменяме класа на body, а CSS върши останалото
                 body.className = `lang-${lang}`;
-
-                // Актуализираме кой бутон е "активен"
                 if (lang === 'bg') {
                     enButton.classList.remove('active');
                     bgButton.classList.add('active');
-                } else { // 'en'
+                } else {
                     bgButton.classList.remove('active');
                     enButton.classList.add('active');
                 }
             }
 
-            // Добавяме слушатели на бутоните
             enButton.addEventListener('click', () => setLanguage('en'));
             bgButton.addEventListener('click', () => setLanguage('bg'));
         });
