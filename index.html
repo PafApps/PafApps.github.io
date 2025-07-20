@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Price Converter App</title>
-    <meta name="description" content="Price Converter е лесно за използване Android приложение за бързо и точно преобразуване на цени между различни валути.">
+    <!-- English Meta Description -->
+    <meta name="description" content="Price Converter is an easy-to-use Android app for quick and accurate price conversions between different currencies.">
     
-    <!-- Можете да използвате иконата на приложението си като favicon -->
+    <title>Price Converter App</title>
+    
+    <!-- ВАЖНО: Уверете се, че файлът 'icon.png' е в същата папка -->
     <link rel="icon" href="icon.png" type="image/png">
 
     <style>
-        /* --- Общи стилове --- */
+        /* --- General Styles --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
@@ -26,19 +28,15 @@
             padding: 20px;
         }
 
-        /* --- Хедър/Банер --- */
+        /* --- Header/Banner --- */
         .header {
             background-image: linear-gradient(to right, #005c97, #363795);
-            /* Можете да използвате и банера си като фон:
-               background-image: url('banner.jpg');
-               background-size: cover;
-               background-position: center;
-            */
             color: white;
-            padding: 60px 20px;
+            padding: 40px 20px 60px 20px;
             text-align: center;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
+            position: relative;
         }
 
         .app-icon {
@@ -62,7 +60,35 @@
             margin-top: 10px;
         }
 
-        /* --- Бутон за сваляне --- */
+        /* --- Language Switcher --- */
+        .lang-switcher {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .lang-switcher button {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            margin-left: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .lang-switcher button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .lang-switcher button.active {
+            background-color: white;
+            color: #005c97;
+        }
+
+        /* --- Download Button --- */
         .download-button {
             display: inline-block;
             margin-top: 30px;
@@ -70,14 +96,14 @@
         }
 
         .download-button img {
-            height: 60px; /* Можете да промените размера */
+            height: 60px;
         }
 
         .download-button:hover {
             transform: scale(1.05);
         }
         
-        /* --- Секции --- */
+        /* --- Sections --- */
         .section {
             padding: 40px 0;
             border-bottom: 1px solid #e0e0e0;
@@ -109,7 +135,7 @@
             text-align: center;
         }
         
-        /* --- Футър --- */
+        /* --- Footer --- */
         .footer {
             background-color: #333;
             color: #ccc;
@@ -126,61 +152,142 @@
         .footer a:hover {
             text-decoration: underline;
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Хедър с името и иконата на приложението -->
+    <!-- Header Section -->
     <header class="header">
-        <!-- ВАЖНО: Уверете се, че файлът 'icon.png' е в същата папка -->
-        <img src="icon.png" alt="Price Converter App Icon" class="app-icon">
-        <h1>Price Converter</h1>
-        <p>Вашият незаменим помощник за преобразуване на валути</p>
+        <div class="lang-switcher">
+            <button id="lang-en" class="active">EN</button>
+            <button id="lang-bg">BG</button>
+        </div>
         
-        <!-- ВАЖНО: ЛИНКЪТ КЪМ ВАШЕТО ПРИЛОЖЕНИЕ Е ВЕЧЕ ДОБАВЕН -->
+        <!-- App Icon -->
+        <img src="icon.png" alt="Price Converter App Icon" class="app-icon">
+        
+        <!-- English Content -->
+        <h1 lang="en">Price Converter</h1>
+        <p lang="en">Your essential tool for currency conversions</p>
+        
+        <!-- Bulgarian Content -->
+        <h1 lang="bg" style="display:none;">Price Converter</h1>
+        <p lang="bg" style="display:none;">Вашият незаменим помощник за преобразуване на валути</p>
+        
+        <!-- Download Button (links to your app) -->
         <a href="https://play.google.com/store/apps/details?id=com.paf.priceconverter" target="_blank" class="download-button">
-            <!-- Стандартен Google Play бутон -->
-            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/bg_badge_web_generic.png" alt="Get it on Google Play">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
         </a>
     </header>
 
     <div class="container">
-        <!-- Секция "Характеристики" -->
+        <!-- Features Section -->
         <section class="section">
-            <h2>Характеристики</h2>
+            <!-- English Title -->
+            <h2 lang="en">Features</h2>
+            <!-- Bulgarian Title -->
+            <h2 lang="bg" style="display:none;">Характеристики</h2>
+            
             <ul class="features-list">
-                <li>Интуитивен и лесен за използване интерфейс</li>
-                <li>Бързо и точно преобразуване на цени</li>
-                <li>Поддръжка на голям брой световни валути</li>
-                <li>Изчистен дизайн без излишни елементи</li>
+                <!-- English Features -->
+                <li lang="en">Intuitive and easy-to-use interface</li>
+                <li lang="en">Fast and accurate price conversion</li>
+                <li lang="en">Support for a wide range of world currencies</li>
+                <li lang="en">Clean design without unnecessary clutter</li>
+                <!-- Bulgarian Features -->
+                <li lang="bg" style="display:none;">Интуитивен и лесен за използване интерфейс</li>
+                <li lang="bg" style="display:none;">Бързо и точно преобразуване на цени</li>
+                <li lang="bg" style="display:none;">Поддръжка на голям брой световни валути</li>
+                <li lang="bg" style="display:none;">Изчистен дизайн без излишни елементи</li>
             </ul>
         </section>
 
-        <!-- Секция "Политика за поверителност" -->
+        <!-- Privacy Policy Section -->
         <section id="privacy" class="section">
-            <h2>Политика за поверителност</h2>
-            <p>
-                Вашата поверителност е важна за нас. Приложението Price Converter е създадено, за да бъде напълно функционално, без да събира, съхранява или споделя каквато и да е лична информация от своите потребители.
-            </p>
-            <ul>
-                <li><strong>Без събиране на данни:</strong> Приложението не изисква и не събира никакви лични данни като имена, имейли или информация за местоположение.</li>
-                <li><strong>Използване на интернет:</strong> Приложението може да изисква достъп до интернет единствено за актуализиране на валутните курсове.</li>
-                <li><strong>Без реклами на трети страни:</strong> Приложението не съдържа реклами, които биха могли да събират информация за вас.</li>
-            </ul>
-            <p>
-                Последна актуализация: 20 юли 2025 г.
-            </p>
+            <!-- English Title -->
+            <h2 lang="en">Privacy Policy</h2>
+            <!-- Bulgarian Title -->
+            <h2 lang="bg" style="display:none;">Политика за поверителност</h2>
+            
+            <!-- English Content -->
+            <div lang="en">
+                <p>
+                    Your privacy is important to us. The Price Converter app is designed to be fully functional without collecting, storing, or sharing any personal information from its users.
+                </p>
+                <ul>
+                    <li><strong>No Data Collection:</strong> The app does not request or collect any personal data such as names, emails, or location information.</li>
+                    <li><strong>Internet Usage:</strong> The app may require internet access solely for the purpose of updating currency exchange rates.</li>
+                    <li><strong>No Third-Party Ads:</strong> The app does not contain third-party advertisements that could collect information about you.</li>
+                </ul>
+                <p>
+                    Last updated: July 20, 2025.
+                </p>
+            </div>
+
+            <!-- Bulgarian Content -->
+            <div lang="bg" style="display:none;">
+                <p>
+                    Вашата поверителност е важна за нас. Приложението Price Converter е създадено, за да бъде напълно функционално, без да събира, съхранява или споделя каквато и да е лична информация от своите потребители.
+                </p>
+                <ul>
+                    <li><strong>Без събиране на данни:</strong> Приложението не изисква и не събира никакви лични данни като имена, имейли или информация за местоположение.</li>
+                    <li><strong>Използване на интернет:</strong> Приложението може да изисква достъп до интернет единствено за актуализиране на валутните курсове.</li>
+                    <li><strong>Без реклами на трети страни:</strong> Приложението не съдържа реклами, които биха могли да събират информация за вас.</li>
+                </ul>
+                <p>
+                    Последна актуализация: 20 юли 2025 г.
+                </p>
+            </div>
         </section>
     </div>
 
-    <!-- Футър -->
+    <!-- Footer -->
     <footer class="footer">
-        <p>
+        <!-- English Content -->
+        <p lang="en">
+            © 2025 Pablito86. All rights reserved. | 
+            <a href="#privacy">Privacy Policy</a>
+        </p>
+        <!-- Bulgarian Content -->
+        <p lang="bg" style="display:none;">
             © 2025 Pablito86. Всички права запазени. | 
             <a href="#privacy">Политика за поверителност</a>
         </p>
     </footer>
+
+    <script>
+        // JavaScript for Language Switching
+        document.addEventListener('DOMContentLoaded', () => {
+            const enButton = document.getElementById('lang-en');
+            const bgButton = document.getElementById('lang-bg');
+            const enElements = document.querySelectorAll('[lang="en"]');
+            const bgElements = document.querySelectorAll('[lang="bg"]');
+
+            function setLanguage(lang) {
+                if (lang === 'bg') {
+                    // Show Bulgarian, Hide English
+                    enElements.forEach(el => el.style.display = 'none');
+                    bgElements.forEach(el => el.style.display = ''); // Use default display
+                    
+                    // Update active button
+                    enButton.classList.remove('active');
+                    bgButton.classList.add('active');
+                } else { // Default to English
+                    // Show English, Hide Bulgarian
+                    enElements.forEach(el => el.style.display = '');
+                    bgElements.forEach(el => el.style.display = 'none');
+                    
+                    // Update active button
+                    bgButton.classList.remove('active');
+                    enButton.classList.add('active');
+                }
+            }
+
+            // Add click event listeners
+            enButton.addEventListener('click', () => setLanguage('en'));
+            bgButton.addEventListener('click', () => setLanguage('bg'));
+        });
+    </script>
 
 </body>
 </html>
