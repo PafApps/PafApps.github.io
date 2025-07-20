@@ -26,7 +26,7 @@
             padding: 20px;
         }
 
-        /* КОРЕКЦИЯ: Изцяло нов, изчистен хедър */
+        /* --- Header --- */
         .header {
             background-color: #ffffff;
             padding: 20px;
@@ -38,19 +38,19 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            flex-wrap: wrap; /* Позволява пренареждане на по-малки екрани */
+            flex-wrap: wrap;
         }
 
         .app-icon {
-            width: 90px; /* Намален размер за по-добър баланс */
+            width: 90px;
             height: 90px;
-            border-radius: 25%; /* Леко заоблени ъгли, както е в Google Play */
+            border-radius: 25%;
             border: 1px solid #eee;
-            flex-shrink: 0; /* Предотвратява смаляването на иконата */
+            flex-shrink: 0;
         }
         
         .app-title-section {
-            flex-grow: 1; /* Заема оставащото пространство */
+            flex-grow: 1;
         }
 
         .app-title-section h1 {
@@ -65,7 +65,7 @@
             color: #555;
         }
 
-        /* КОРЕКЦИЯ: Променени цветове на бутоните за език за по-добра видимост */
+        /* --- Language Switcher --- */
         .lang-switcher {
             position: absolute;
             top: 20px;
@@ -110,20 +110,6 @@
         }
         .download-button img:hover {
             transform: scale(1.05);
-        }
-
-        /* КОРЕКЦИЯ: Нова секция специално за банера */
-        .banner-section {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #ffffff;
-        }
-        
-        .banner-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         
         /* --- Sections --- */
@@ -180,7 +166,6 @@
 </head>
 <body class="lang-en">
 
-    <!-- НОВ ДИЗАЙН НА ХЕДЪРА -->
     <header class="header">
         <div class="lang-switcher">
             <button id="lang-en" class="active">EN</button>
@@ -205,11 +190,6 @@
     </header>
 
     <div class="container">
-        <!-- НОВА СЕКЦИЯ ЗА БАНЕРА -->
-        <section class="banner-section">
-            <img src="banner.png" alt="Price Converter Feature Banner" class="banner-image">
-        </section>
-
         <!-- Features Section -->
         <section class="section">
             <h2 lang="en">Features</h2>
