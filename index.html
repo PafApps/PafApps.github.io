@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Приложенията на Pablito86</title>
-    <meta name="description" content="Интерактивно представяне на приложенията, разработени от PafApps - Провери цената и Price Converter.">
+    <meta name="description" content="Интерактивно представяне на приложенията, разработени от Pablito86 - Провери цената и Price Converter, с поддръжка на български и английски език.">
+    
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -23,6 +24,7 @@
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.7;
+            transition: background-color 0.3s;
         }
 
         .container {
@@ -32,10 +34,38 @@
         }
 
         header {
+            position: relative;
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px 40px;
             background-color: var(--primary-color);
             color: white;
+        }
+        
+        .lang-switcher {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .lang-switcher button {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: 5px 12px;
+            margin-left: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .lang-switcher button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .lang-switcher button.active {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
         }
 
         header h1 {
@@ -84,6 +114,7 @@
             border-radius: 22%;
             flex-shrink: 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            object-fit: cover;
         }
 
         .app-title h2 {
@@ -129,12 +160,10 @@
             cursor: pointer;
             padding: 10px 0;
             outline: none;
-            list-style: none; /* Hide the default arrow in some browsers */
+            list-style: none;
         }
         
-        summary::-webkit-details-marker {
-            display: none; /* Hide the default arrow in Chrome/Safari */
-        }
+        summary::-webkit-details-marker { display: none; }
         
         summary::after {
             content: '▼';
@@ -142,9 +171,7 @@
             transition: transform 0.2s;
         }
 
-        details[open] summary::after {
-            transform: rotate(180deg);
-        }
+        details[open] summary::after { transform: rotate(180deg); }
 
         .description-content {
             padding-top: 10px;
@@ -158,13 +185,25 @@
             color: #7f8c8d;
             font-size: 0.9em;
         }
+        
+        /* Language visibility rules */
+        body.lang-en [lang="bg"] { display: none; }
+        body.lang-bg [lang="en"] { display: none; }
     </style>
 </head>
-<body>
+<body class="lang-bg">
 
     <header>
-        <h1>Моите Приложения</h1>
-        <p>Полезни и лесни за употреба инструменти за вашето ежедневие</p>
+        <div class="lang-switcher">
+            <button id="lang-bg" class="active">BG</button>
+            <button id="lang-en">EN</button>
+        </div>
+        
+        <h1 lang="bg">Моите Приложения</h1>
+        <h1 lang="en">My Apps</h1>
+        
+        <p lang="bg">Полезни и лесни за употреба инструменти за вашето ежедневие</p>
+        <p lang="en">Useful and easy-to-use tools for your daily life</p>
     </header>
 
     <div class="container">
@@ -173,10 +212,12 @@
             <!-- App 1: Провери цената -->
             <div class="app-card">
                 <div class="app-header">
-                    <img src="https://lh3.googleusercontent.com/A-tF2-VqK_2n_i_hxB-K4G-a-s0Z2cWv2naD1zKk_x-2k-Lz-2-p_1Z9Z2pZ2xY_w=s180-rw" alt="Икона на Провери цената" class="app-icon">
+                    <img src="icon2.png" alt="Икона на Провери цената" class="app-icon">
                     <div class="app-title">
-                        <h2>Провери цената</h2>
-                        <p>Бързо сканиране и сравнение</p>
+                        <h2 lang="bg">Провери цената</h2>
+                        <h2 lang="en">Check the Price</h2>
+                        <p lang="bg">Бързо сканиране и сравнение</p>
+                        <p lang="en">Quick scan and comparison</p>
                     </div>
                 </div>
                 <div class="app-body">
@@ -184,9 +225,11 @@
                         <img src="https://play.google.com/intl/en_us/badges/static/images/badges/bg_badge_web_generic.png" alt="Вземете го от Google Play">
                     </a>
                     <details>
-                        <summary>Повече за приложението</summary>
+                        <summary lang="bg">Повече за приложението</summary>
+                        <summary lang="en">More about the app</summary>
                         <div class="description-content">
-                            <p>Сканирайте баркода на даден продукт, за да намерите бързо цени и подробности за него. Това приложение улеснява онлайн пазаруването, като ви позволява да проверявате цени и наличност. То е идеално за бърза проверка и сравнение на цени в различни онлайн магазини. Интерфейсът е лесен за използване и не изисква регистрация или вход.</p>
+                            <p lang="bg">Провери Цената - Вашият щит срещу грешни етикети при преминаването към еврото! С наближаването на приемането на еврото в България, всички магазини вече показват цени в лева и евро. Но сигурни ли сте, че курсът е изчислен правилно? Не ви ли мамят с обявената цена в евро? С приложението "Провери Цената" получавате мигновена сигурност само с едно насочване на камерата! ЗАЩО "ПРОВЕРИ ЦЕНАТА" Е ЗАДЪЛЖИТЕЛНО ПРИЛОЖЕНИЕ ЗА ВСЕКИ В БЪЛГАРИЯ: ✅ ПРЕДПАЗВА ВИ ОТ ГРЕШКИ И ИЗМАМИ, ✅ СУПЕР БЪРЗО СКАНИРАНЕ С КАМЕРАТА, ✅ РЪЧЕН ВАЛУТЕН КАЛКУЛАТОР. Не позволявайте да ви объркат със сложни сметки и грешни етикети. Изтеглете "Провери Цената" днес и носете сигурността в джоба си!</p>
+                            <p lang="en">Check the Price - Your shield against wrong labels when switching to the euro! As the adoption of the euro approaches in Bulgaria, all shops now display prices in BGN and EUR. But are you sure the rate is calculated correctly? Are you not being cheated with the announced price in euros? With the Check Price app, you get instant security with just one point of the camera! WHY "CHECK THE PRICE" IS A MANDATORY APP FOR EVERYONE IN BULGARIA: ✅ PROTECTS YOU FROM ERRORS AND SCAMS, ✅ SUPER FAST CAMERA SCANNING, ✅ MANUAL CURRENCY CALCULATOR. Don't let them confuse you with complicated bills and wrong labels. Download Check Price today and have security in your pocket!</p>
                         </div>
                     </details>
                 </div>
@@ -195,10 +238,11 @@
             <!-- App 2: Price Converter -->
             <div class="app-card">
                 <div class="app-header">
-                    <img src="https://lh3.googleusercontent.com/x0TSIB3o9T7-BIAyJ1K5H9LQz0-o1J2w9AF-WAPb-re3oeFspz-AYs_w0n-ZkH2hWQ=s180-rw" alt="Икона на Price Converter" class="app-icon">
+                    <img src="icon.png" alt="Икона на Price Converter" class="app-icon">
                     <div class="app-title">
                         <h2>Price Converter</h2>
-                        <p>Валутен конвертор</p>
+                        <p lang="bg">Валутен конвертор</p>
+                        <p lang="en">Currency Converter</p>
                     </div>
                 </div>
                 <div class="app-body">
@@ -206,9 +250,11 @@
                         <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
                     </a>
                     <details>
-                        <summary>Повече за приложението</summary>
+                        <summary lang="bg">Повече за приложението</summary>
+                        <summary lang="en">More about the app</summary>
                         <div class="description-content">
-                            <p>Currency Prices Converter е финансово приложение, което предоставя актуални курсове за валути от цял свят, обновявани на всеки 15 минути. То е идеалният инструмент за туристи и всеки, който има нужда бързо да конвертира пари. Приложението поддържа над 100 валути и позволява моментално преобразуване между тях по лесен и ясен начин.</p>
+                             <p lang="bg">Price Converter - Сканирайте, конвертирайте и пазарувайте по-умно. Уморихте ли се ръчно да въвеждате цени в тромав валутен конвертор, докато пътувате или пазарувате онлайн? Price Converter революционизира начина, по който боравите с пари, със своята мощна функция за сканиране с камера! Просто насочете камерата си към всеки етикет с цена и нашето приложение незабавно разпознава числото и го преобразува във вашата домашна валута, използвайки актуални обменни курсове на живо. Спрете да гадаете и започнете да знаете. Изтеглете Price Converter днес и направете обмяната на валута лесна, бърза и забавна! Вашият умен спътник при пътуване е само на едно докосване.</p>
+                            <p lang="en">Price Converter - Scan, Convert, and Shop Smarter. Tired of manually typing prices into a clunky currency converter while traveling or shopping online? Price Converter revolutionizes how you handle money with its powerful camera scanning feature! Simply point your camera at any price tag, and our app instantly recognizes the number and converts it to your home currency using live, up-to-the-minute exchange rates. It's the fastest and most intuitive way to understand prices anywhere in the world. Stop guessing and start knowing. Download Price Converter today and make currency conversion effortless, fast, and fun! Your smart travel companion is just a tap away.</p>
                         </div>
                     </details>
                 </div>
@@ -218,8 +264,28 @@
     </div>
 
     <footer>
-        <p>© 2025 PafApps. Всички права запазени.</p>
+        <p lang="bg">© 2025 Pablito86. Всички права запазени.</p>
+        <p lang="en">© 2025 Pablito86. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bgButton = document.getElementById('lang-bg');
+            const enButton = document.getElementById('lang-en');
+            const body = document.body;
+
+            function setLanguage(lang) {
+                body.className = `lang-${lang}`;
+                document.documentElement.lang = lang; // Update the lang attribute of the html tag
+                
+                bgButton.classList.toggle('active', lang === 'bg');
+                enButton.classList.toggle('active', lang === 'en');
+            }
+
+            bgButton.addEventListener('click', () => setLanguage('bg'));
+            enButton.addEventListener('click', () => setLanguage('en'));
+        });
+    </script>
 
 </body>
 </html>
