@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приложенията на Pablito86</title>
-    <meta name="description" content="Интерактивно представяне на приложенията, разработени от Pablito86 - Провери цената и Price Converter, с поддръжка на български и английски език.">
+    <title>Pablito86's Apps</title>
+    <meta name="description" content="Interactive showcase of apps developed by Pablito86 - Check the Price and Price Converter, with support for Bulgarian and English.">
     
     <style>
         :root {
@@ -177,6 +177,22 @@
             padding-top: 10px;
             font-size: 0.95em;
         }
+        
+        .description-content ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+        .description-content ul li {
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .description-content h4 {
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
 
         footer {
             text-align: center;
@@ -191,12 +207,12 @@
         body.lang-bg [lang="en"] { display: none; }
     </style>
 </head>
-<body class="lang-bg">
+<body class="lang-en">
 
     <header>
         <div class="lang-switcher">
-            <button id="lang-bg" class="active">BG</button>
-            <button id="lang-en">EN</button>
+            <button id="lang-bg">BG</button>
+            <button id="lang-en" class="active">EN</button>
         </div>
         
         <h1 lang="bg">Моите Приложения</h1>
@@ -209,10 +225,10 @@
     <div class="container">
         <div class="apps-container">
 
-            <!-- App 1: Провери цената -->
+            <!-- App 1: Check the Price -->
             <div class="app-card">
                 <div class="app-header">
-                    <img src="icon2.png" alt="Икона на Провери цената" class="app-icon">
+                    <img src="icon2.png" alt="Check the Price Icon" class="app-icon">
                     <div class="app-title">
                         <h2 lang="bg">Провери цената</h2>
                         <h2 lang="en">Check the Price</h2>
@@ -225,11 +241,35 @@
                         <img src="https://play.google.com/intl/en_us/badges/static/images/badges/bg_badge_web_generic.png" alt="Вземете го от Google Play">
                     </a>
                     <details>
-                        <summary lang="bg">Повече за приложението</summary>
-                        <summary lang="en">More about the app</summary>
+                        <summary>
+                            <span lang="bg">Повече за приложението</span>
+                            <span lang="en">More about the app</span>
+                        </summary>
                         <div class="description-content">
-                            <p lang="bg">Провери Цената - Вашият щит срещу грешни етикети при преминаването към еврото! С наближаването на приемането на еврото в България, всички магазини вече показват цени в лева и евро. Но сигурни ли сте, че курсът е изчислен правилно? Не ви ли мамят с обявената цена в евро? С приложението "Провери Цената" получавате мигновена сигурност само с едно насочване на камерата! ЗАЩО "ПРОВЕРИ ЦЕНАТА" Е ЗАДЪЛЖИТЕЛНО ПРИЛОЖЕНИЕ ЗА ВСЕКИ В БЪЛГАРИЯ: ✅ ПРЕДПАЗВА ВИ ОТ ГРЕШКИ И ИЗМАМИ, ✅ СУПЕР БЪРЗО СКАНИРАНЕ С КАМЕРАТА, ✅ РЪЧЕН ВАЛУТЕН КАЛКУЛАТОР. Не позволявайте да ви объркат със сложни сметки и грешни етикети. Изтеглете "Провери Цената" днес и носете сигурността в джоба си!</p>
-                            <p lang="en">Check the Price - Your shield against wrong labels when switching to the euro! As the adoption of the euro approaches in Bulgaria, all shops now display prices in BGN and EUR. But are you sure the rate is calculated correctly? Are you not being cheated with the announced price in euros? With the Check Price app, you get instant security with just one point of the camera! WHY "CHECK THE PRICE" IS A MANDATORY APP FOR EVERYONE IN BULGARIA: ✅ PROTECTS YOU FROM ERRORS AND SCAMS, ✅ SUPER FAST CAMERA SCANNING, ✅ MANUAL CURRENCY CALCULATOR. Don't let them confuse you with complicated bills and wrong labels. Download Check Price today and have security in your pocket!</p>
+                            <!-- English Description -->
+                            <div lang="en">
+                                <p><strong>Your shield against wrong labels when switching to the euro!</strong></p>
+                                <p>As the adoption of the euro approaches in Bulgaria, are you sure the rate is calculated correctly? With the Check Price app, you get instant security with just one point of the camera!</p>
+                                <h4>Why is this a mandatory app?</h4>
+                                <ul>
+                                    <li>✅ <strong>PROTECTS YOU FROM ERRORS AND SCAMS:</strong> Rest assured that the prices you see are recalculated correctly using the official fixed rate.</li>
+                                    <li>📸 <strong>SUPER FAST CAMERA SCANNING:</strong> Forget manual input! Just point and scan. It's the fastest BGN to EUR converter.</li>
+                                    <li>⌨️ <strong>MANUAL CURRENCY CALCULATOR:</strong> Use our handy calculator to convert any amount from BGN to EUR or vice versa.</li>
+                                </ul>
+                                <p>Don't let them confuse you. Download Check Price today and have security in your pocket!</p>
+                            </div>
+                            <!-- Bulgarian Description -->
+                            <div lang="bg">
+                                <p><strong>Вашият щит срещу грешни етикети при преминаването към еврото!</strong></p>
+                                <p>С наближаването на приемането на еврото, сигурни ли сте, че курсът е изчислен правилно? С приложението "Провери Цената" получавате мигновена сигурност само с едно насочване на камерата!</p>
+                                <h4>Защо това приложение е задължително?</h4>
+                                <ul>
+                                    <li>✅ <strong>ПРЕДПАЗВА ВИ ОТ ГРЕШКИ И ИЗМАМИ:</strong> Бъдете сигурни, че цените са преизчислени правилно по официалния фиксиран курс.</li>
+                                    <li>📸 <strong>СУПЕР БЪРЗО СКАНИРАНЕ С КАМЕРА:</strong> Забравете ръчното въвеждане! Просто насочете и сканирайте.</li>
+                                    <li>⌨️ <strong>РЪЧЕН ВАЛУТЕН КАЛКУЛАТОР:</strong> Използвайте удобния ни калкулатор, за да конвертирате всяка сума от лева в евро или обратно.</li>
+                                </ul>
+                                <p>Не позволявайте да ви объркат. Изтеглете "Провери Цената" днес и носете сигурността в джоба си!</p>
+                            </div>
                         </div>
                     </details>
                 </div>
@@ -238,7 +278,7 @@
             <!-- App 2: Price Converter -->
             <div class="app-card">
                 <div class="app-header">
-                    <img src="icon.png" alt="Икона на Price Converter" class="app-icon">
+                    <img src="icon.png" alt="Price Converter Icon" class="app-icon">
                     <div class="app-title">
                         <h2>Price Converter</h2>
                         <p lang="bg">Валутен конвертор</p>
@@ -250,11 +290,35 @@
                         <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
                     </a>
                     <details>
-                        <summary lang="bg">Повече за приложението</summary>
-                        <summary lang="en">More about the app</summary>
+                        <summary>
+                            <span lang="bg">Повече за приложението</span>
+                            <span lang="en">More about the app</span>
+                        </summary>
                         <div class="description-content">
-                             <p lang="bg">Price Converter - Сканирайте, конвертирайте и пазарувайте по-умно. Уморихте ли се ръчно да въвеждате цени в тромав валутен конвертор, докато пътувате или пазарувате онлайн? Price Converter революционизира начина, по който боравите с пари, със своята мощна функция за сканиране с камера! Просто насочете камерата си към всеки етикет с цена и нашето приложение незабавно разпознава числото и го преобразува във вашата домашна валута, използвайки актуални обменни курсове на живо. Спрете да гадаете и започнете да знаете. Изтеглете Price Converter днес и направете обмяната на валута лесна, бърза и забавна! Вашият умен спътник при пътуване е само на едно докосване.</p>
-                            <p lang="en">Price Converter - Scan, Convert, and Shop Smarter. Tired of manually typing prices into a clunky currency converter while traveling or shopping online? Price Converter revolutionizes how you handle money with its powerful camera scanning feature! Simply point your camera at any price tag, and our app instantly recognizes the number and converts it to your home currency using live, up-to-the-minute exchange rates. It's the fastest and most intuitive way to understand prices anywhere in the world. Stop guessing and start knowing. Download Price Converter today and make currency conversion effortless, fast, and fun! Your smart travel companion is just a tap away.</p>
+                            <!-- English Description -->
+                            <div lang="en">
+                                <p><strong>Scan, Convert, and Shop Smarter!</strong></p>
+                                <p>Tired of manually typing prices? Price Converter revolutionizes how you handle money with its powerful camera scanning feature and live exchange rates.</p>
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li>📸 <strong>Instant Camera Scanning (OCR):</strong> Reads prices directly from labels, menus, and tags in real-time. No more typing!</li>
+                                    <li>💱 <strong>Live Exchange Rates:</strong> Get access to reliable, real-time rates for all major currencies (USD, EUR, GBP, JPY, and more).</li>
+                                    <li>⌨️ <strong>Manual Conversion Mode:</strong> For times when you can't scan, our classic currency calculator is always available.</li>
+                                </ul>
+                                <p>Stop guessing and start knowing. Your smart travel companion is just a tap away!</p>
+                            </div>
+                            <!-- Bulgarian Description -->
+                            <div lang="bg">
+                                <p><strong>Сканирайте, конвертирайте и пазарувайте по-умно!</strong></p>
+                                <p>Уморихте ли се да въвеждате цени ръчно? Price Converter революционизира начина, по който боравите с пари, със своята мощна функция за сканиране и обменни курсове на живо.</p>
+                                <h4>Основни характеристики:</h4>
+                                <ul>
+                                    <li>📸 <strong>Незабавно сканиране с камера (OCR):</strong> Чете цени директно от етикети, менюта и табели в реално време. Край на писането!</li>
+                                    <li>💱 <strong>Обменни курсове на живо:</strong> Получете достъп до надеждни, актуални курсове за всички основни валути (USD, EUR, GBP, JPY и др.).</li>
+                                    <li>⌨️ <strong>Ръчен режим на конвертиране:</strong> За моментите, в които не можете да сканирате, нашият класически калкулатор е винаги на разположение.</li>
+                                </ul>
+                                <p>Спрете да гадаете и започнете да знаете. Вашият умен спътник при пътуване е само на едно докосване!</p>
+                            </div>
                         </div>
                     </details>
                 </div>
@@ -276,7 +340,7 @@
 
             function setLanguage(lang) {
                 body.className = `lang-${lang}`;
-                document.documentElement.lang = lang; // Update the lang attribute of the html tag
+                document.documentElement.lang = lang; 
                 
                 bgButton.classList.toggle('active', lang === 'bg');
                 enButton.classList.toggle('active', lang === 'en');
