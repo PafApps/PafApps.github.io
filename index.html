@@ -28,7 +28,8 @@
         }
 
         .container {
-            max-width: 1100px; /* Увеличена максимална ширина на контейнера */
+            /* Промяна: Увеличена ширина за по-добро разположение */
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -81,8 +82,8 @@
 
         .apps-container {
             display: grid;
-            /* Промяната е тук - от 300px на 340px */
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            /* Промяна: Увеличена ширина от 340px на 360px */
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
@@ -403,6 +404,24 @@
 
             bgButton.addEventListener('click', () => setLanguage('bg'));
             enButton.addEventListener('click', () => setLanguage('en'));
+
+            // --- Промяна: Код за автоматично затваряне на <details> (акордеон ефект) ---
+            const allDetails = document.querySelectorAll('details');
+
+            allDetails.forEach(details => {
+                details.addEventListener('toggle', event => {
+                    // Ако елементът е отворен
+                    if (details.open) {
+                        // Затвори всички други елементи
+                        allDetails.forEach(otherDetails => {
+                            if (otherDetails !== details) {
+                                otherDetails.open = false;
+                            }
+                        });
+                    }
+                });
+            });
+            // --- Край на промяната ---
         });
     </script>
 
