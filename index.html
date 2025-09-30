@@ -388,42 +388,51 @@
         <p lang="en">© 2025 Pablito86. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const bgButton = document.getElementById('lang-bg');
-            const enButton = document.getElementById('lang-en');
-            const body = document.body;
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const bgButton = document.getElementById('lang-bg');
+        const enButton = document.getElementById('lang-en');
+        const body = document.body;
 
-            function setLanguage(lang) {
-                body.className = `lang-${lang}`;
-                document.documentElement.lang = lang; 
-                
-                bgButton.classList.toggle('active', lang === 'bg');
-                enButton.classList.toggle('active', lang === 'en');
-            }
+        function setLanguage(lang) {
+            body.className = `lang-${lang}`;
+            document.documentElement.lang = lang; 
+            
+            bgButton.classList.toggle('active', lang === 'bg');
+            enButton.classList.toggle('active', lang === 'en');
+        }
 
-            bgButton.addEventListener('click', () => setLanguage('bg'));
-            enButton.addEventListener('click', () => setLanguage('en'));
+        bgButton.addEventListener('click', () => setLanguage('bg'));
+        enButton.addEventListener('click', () => setLanguage('en'));
 
-            // --- Промяна: Код за автоматично затваряне на <details> (акордеон ефект) ---
-            const allDetails = document.querySelectorAll('details');
+        // --- НОВ, КОРИГИРАН КОД за акордеон ефект ---
+        const allDetails = document.querySelectorAll('details');
 
-            allDetails.forEach(details => {
-                details.addEventListener('toggle', event => {
-                    // Ако елементът е отворен
-                    if (details.open) {
-                        // Затвори всички други елементи
-                        allDetails.forEach(otherDetails => {
-                            if (otherDetails !== details) {
-                                otherDetails.open = false;
-                            }
-                        });
-                    }
-                });
+        allDetails.forEach(currentDetailsElement => {
+            // Добавяме слушател на клик към заглавието (summary)
+            const summary = currentDetailsElement.querySelector('summary');
+            
+            summary.addEventListener('click', (event) => {
+                // Предотвратяваме стандартното поведение на браузъра, за да го управляваме ние
+                event.preventDefault();
+
+                // Проверяваме дали този елемент НЕ е отворен
+                if (!currentDetailsElement.open) {
+                    // Ако не е, първо затваряме ВСИЧКИ други отворени елементи
+                    allDetails.forEach(d => {
+                        d.open = false;
+                    });
+                    // И след това отваряме само този, който е кликнат
+                    currentDetailsElement.open = true;
+                } else {
+                    // Ако вече е бил отворен, просто го затваряме
+                    currentDetailsElement.open = false;
+                }
             });
-            // --- Край на промяната ---
         });
-    </script>
+        // --- Край на новия код ---
+    });
+</script>
 
 </body>
 </html>
