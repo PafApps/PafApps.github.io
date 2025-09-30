@@ -80,13 +80,13 @@
             color: rgba(255, 255, 255, 0.9);
         }
 
-        .apps-container {
-            display: grid;
-            /* Промяна: Увеличена ширина от 340px на 360px */
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+.apps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    align-items: start; /* <-- ДОБАВИ ТОЗИ РЕД */
+}
 
         .app-card {
             background: var(--card-background);
